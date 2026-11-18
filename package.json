@@ -1,0 +1,14 @@
+{
+  "name": "logline-append-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A checksummed append-only key-value log with crash-tail recovery and compaction.",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/logline-store.js && node --check src/cli.js && node --check bench/append.js",
+    "bench": "node bench/append.js"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}
