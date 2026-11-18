@@ -1,5 +1,7 @@
 # LoglineDB
 
+[![CI](https://github.com/banerjeeankita1907-hub/threadcounty-hackathon/actions/workflows/ci.yml/badge.svg)](https://github.com/banerjeeankita1907-hub/threadcounty-hackathon/actions/workflows/ci.yml)
+
 A small append-only key/value store designed to make persistence mechanics visible: framed records, checksums, monotonic sequence numbers, crash-tail recovery, tombstones, and atomic compaction.
 
 ## What it demonstrates
@@ -37,7 +39,7 @@ node src/cli.js ./data/store.log compact
 
 ## Storage model
 
-The log is UTF-8 framed as `<CRC32><TAB><JSON record><LF>`. Version 1 records contain an increasing sequence, operation, key, and (for puts) a JSON-compatible value. See [docs/storage-format.md](docs/storage-format.md).
+The log is UTF-8 framed as `<CRC32><TAB><JSON record><LF>`. Version 1 records contain an increasing sequence, operation, key, and (for puts) a JSON-compatible value. See [docs/storage-format.md](docs/storage-format.md) and [the storage design decision](docs/adr/0001-log-and-durability-boundary.md).
 
 ## Failure model and limits
 
